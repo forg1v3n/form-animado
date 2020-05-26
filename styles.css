@@ -117,7 +117,8 @@ form .btn-login {
 /* THE FORM DISAPPEARS, WHEN CLICKED ON THE LOGIN BUTTON */
 
 .form-hide {
-    animation: down 500ms forwards;
+    animation: down 1.2s forwards;
+    animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
 
 }
 
@@ -126,6 +127,29 @@ form .btn-login {
         transform: translateY(0);
     }
     to {
-        transform: translateY(100vh);
+        transform: translateY(50vh);
+    }
+}
+
+/* FORM NO-NO */
+
+form.validate-error {
+    animation: nono 200ms, linear, fade paused;
+    animation-iteration-count: 2;
+
+}
+
+@keyframes nono {
+    0% {
+        transform: translateX(0);
+    }
+    35% {
+        transform: translateX(-15%);
+    }
+    70% {
+        transform: translateX(15%);
+    }
+    100% {
+        transform: translateX(0);
     }
 }
