@@ -1,0 +1,131 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    height: 100vh;
+}
+
+body {
+    background: rgb(127,183,190);
+    background: linear-gradient(90deg, rgba(127,183,190,1) 0%, rgba(0,212,255,1) 100%);
+    font-family: 'Montserrat', sans-serif;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 32px;
+    letter-spacing: 1px;
+    margin: 20px 0;
+    color: white;
+}
+
+form {
+    margin: 20px 0;
+    background-color: white;
+    padding: 30px 25px;
+    border-radius: 5px;
+}
+
+form .input-block {
+    margin-bottom: 20px;
+}
+
+form .input-block label {
+    font-size: 14px;
+    color: #242423;
+}
+
+form .input-block input {
+    width: 100%;
+    display: block;
+    margin-top: 8px;
+    padding: 7px;
+    font-size: 16px;
+    color: black;
+    border-radius: 2px;
+    border: 1px solid #ccddef;
+    outline-color: #00d4ff;
+}
+
+form .btn-login {
+    display: block;
+    min-width: 120px;
+    border: none;
+    background-color: #00d4ff;
+    color: white;
+    border-radius: 25px;
+    margin: auto;
+    padding: 7px;
+}
+
+/* FORM-ANIMATION */
+
+form {
+    animation-name: fade;
+    animation-duration: 0.7s;
+}
+
+@keyframes fade {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+form {
+    overflow: hidden;
+    animation: fade 0.2s;
+}
+
+form .input-block:nth-child(1) {
+    animation: move 500ms;
+}
+
+form .input-block:nth-child(2) {
+    animation: move 400ms;
+    animation-delay: 100ms;
+    animation-fill-mode: backwards;
+}
+
+form .btn-login {
+    animation: move 400ms;
+    animation-delay: 250ms;
+    animation-fill-mode: backwards;
+}
+
+@keyframes move {
+    from {
+        opacity: 0;
+        transform: translateX(-35%);
+    }  
+}
+
+/* THE FORM DISAPPEARS, WHEN CLICKED ON THE LOGIN BUTTON */
+
+.form-hide {
+    animation: down 500ms forwards;
+
+}
+
+@keyframes down {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(100vh);
+    }
+}
